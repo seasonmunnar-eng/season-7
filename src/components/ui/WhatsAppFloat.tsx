@@ -1,10 +1,11 @@
 import React from "react";
+import { site } from "@/data/site";
 import styles from "./WhatsAppFloat.module.css";
 
 export default function WhatsAppFloat() {
   return (
     <a
-      href="https://wa.me/919895975074"
+      href={site.bookingUrl}
       target="_blank"
       rel="noopener noreferrer"
       className={styles.whatsappFloat}

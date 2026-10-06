@@ -3,9 +3,6 @@ import { site } from "@/data/site";
 import { Arrow, Botanical, Chapter, TextLink } from "./ForestPrimitives";
 import styles from "./Forest.module.css";
 
-// Existing contact destination, also used by the site's WhatsApp control.
-const bookingLink = "https://wa.me/919895975074";
-
 export function Benefits() {
   return <section className={styles.benefits} aria-labelledby="benefits-title"><div className={styles.wrap}><div className={styles.benefitsHeading}><span className={styles.eyebrow}>Little things. Thoughtfully included.</span><h2 id="benefits-title">Simply <em>taken care of.</em></h2></div><ol className={styles.benefitList}>{[
     ["Complimentary Breakfast", "A good morning starts here."],
@@ -23,7 +20,7 @@ export function Contact() {
           <div>
             <h2 id="contact-title" className={styles.display}>Your next chapter<br /><em>begins here.</em></h2>
             <p className={styles.contactIntro}>A few quiet days, a family escape, or simply a change of scenery. Tell us what you have in mind.</p>
-            <a href={bookingLink} className={styles.solidButton} target="_blank" rel="noopener noreferrer">Plan your stay on WhatsApp<Arrow diagonal /></a>
+            <a href={site.bookingUrl} className={styles.solidButton} target="_blank" rel="noopener noreferrer">Plan your stay on WhatsApp<Arrow diagonal /></a>
           </div>
           <div className={styles.contactDetails}>
             <Botanical />
@@ -88,7 +85,7 @@ export function Invitation() {
     <section className={styles.invitation} aria-labelledby="invitation-title">
       <Image src="/images/forest/forest.webp" alt="A leafy forest path opening to the misty mountains of Munnar" fill sizes="100vw" className={styles.landscape} />
       <div className={styles.invitationShade} />
-      <div className={styles.invitationContent}><span className={styles.eyebrow}>Season7 The Nature Resort · Munnar</span><h2 id="invitation-title">Leave the everyday.<br /><em>Come back to nature.</em></h2><p>The hills are calling. Take your time answering.</p><a href={bookingLink} className={styles.lightButton} target="_blank" rel="noopener noreferrer">Book Your Stay<Arrow diagonal /></a><span className={styles.invitationFoot}>A quieter world is waiting.</span></div>
+      <div className={styles.invitationContent}><span className={styles.eyebrow}>Season7 The Nature Resort · Munnar</span><h2 id="invitation-title">Leave the everyday.<br /><em>Come back to nature.</em></h2><p>The hills are calling. Take your time answering.</p><a href={site.bookingUrl} className={styles.lightButton} target="_blank" rel="noopener noreferrer">Book Your Stay<Arrow diagonal /></a><span className={styles.invitationFoot}>A quieter world is waiting.</span></div>
     </section>
   );
 }

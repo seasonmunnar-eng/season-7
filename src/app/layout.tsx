@@ -5,10 +5,9 @@ import ScrollToTop from "@/components/ui/ScrollToTop";
 import Preloader from "@/components/ui/Preloader";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 
-const resortName = "SEASON7 THE NATURE RESORT";
+const resortName = "Season7 The Nature Resort";
 const pageTitle = `${resortName} | Munnar, Kerala`;
-const pageDescription =
-  "Find your quiet escape at Season7 The Nature Resort in Chithirapuram, Munnar. Discover cottages with private balconies, dining, a swimming pool and spa.";
+const pageDescription = site.description;
 const socialImage = {
   url: "/images/season7-munnar-hero.webp",
   width: 1672,
@@ -19,14 +18,24 @@ const socialImage = {
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
+  applicationName: resortName,
+  category: "travel",
+  referrer: "origin-when-cross-origin",
   metadataBase: new URL(site.url),
   alternates: {
     canonical: "/",
+    languages: {
+      "en-IN": "/",
+    },
   },
   keywords: [
     "Season7 The Nature Resort",
     "Nature resort in Munnar",
     "Resort in Chithirapuram",
+    "Chithirapuram resort",
+    "Resort near Anachal",
+    "Cottage stay in Munnar",
+    "Munnar resort with pool",
     "Munnar Kerala resort",
     "Nature stay in Munnar",
   ],
@@ -59,6 +68,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+      "max-snippet": -1,
+    },
   },
   other: {
     "geo.region": "IN-KL",
@@ -71,21 +87,67 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Resort",
-    "@id": `${site.url}/#resort`,
-    name: resortName,
-    description: pageDescription,
-    url: site.url,
-    image: new URL(socialImage.url, site.url).toString(),
-    hasMap: site.mapsLink,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Eatty City Road, Chithirapuram, PO, Anachal",
-      addressLocality: "Munnar",
-      addressRegion: "Kerala",
-      postalCode: "685565",
-      addressCountry: "IN",
-    },
+    "@graph": [
+      {
+        "@type": ["LodgingBusiness", "Resort"],
+        "@id": `${site.url}/#resort`,
+        name: resortName,
+        legalName: site.legalName,
+        description: pageDescription,
+        url: site.url,
+        image: [
+          new URL(socialImage.url, site.url).toString(),
+          new URL("/images/season7-forest-logo.webp", site.url).toString(),
+        ],
+        logo: new URL("/images/season7-forest-logo.webp", site.url).toString(),
+        telephone: site.telephone,
+        sameAs: site.sameAs,
+        hasMap: site.mapsLink,
+        areaServed: ["Munnar", "Kerala", "India"],
+        knowsAbout: [
+          "Munnar nature stays",
+          "Kerala highlands travel",
+          "Chithirapuram accommodation",
+        ],
+        amenityFeature: [
+          "Private balconies",
+          "Complimentary breakfast",
+          "Multi-cuisine restaurant",
+          "Cool Bar",
+          "Swimming pool",
+          "Spa and wellness",
+          "Kids play area",
+          "Campfire nights",
+          "Bicycle rides",
+        ].map((name) => ({
+          "@type": "LocationFeatureSpecification",
+          name,
+          value: true,
+        })),
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Eatty City Road, Chithirapuram, PO, Anachal",
+          addressLocality: "Munnar",
+          addressRegion: "Kerala",
+          postalCode: "685565",
+          addressCountry: "IN",
+        },
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: site.telephone,
+          contactType: "reservations",
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${site.url}/#website`,
+        name: resortName,
+        url: site.url,
+        description: pageDescription,
+        inLanguage: "en-IN",
+        publisher: { "@id": `${site.url}/#resort` },
+      },
+    ],
   };
 
   return (
