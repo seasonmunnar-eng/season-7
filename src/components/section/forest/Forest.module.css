@@ -1,0 +1,344 @@
+.wrap {
+  width: min(100%, 96rem);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5.5vw, 6rem);
+}
+
+.about, .accommodation, .dining, .wellness, .benefits, .contact {
+  padding-block: clamp(4.5rem, 8.5vw, 9rem);
+}
+
+.about, .wellness { background: #f5f2e9; color: #1c3428; }
+.accommodation { background: #11281e; color: #f5f1e0; }
+.dining { background: #eae3d6; color: #263a2d; }
+.benefits { background: #f5f2e9; color: #1c3428; }
+.contact { background: #e8eadf; color: #1c3428; }
+
+.eyebrow, .place, .aboutFoot, .staySideNote, .verticalNote, .locationIndex, .invitationFoot {
+  font-family: var(--font-mono);
+  font-size: .65rem;
+  line-height: 1.7;
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.eyebrow { display: flex; align-items: center; gap: .9rem; margin: 0; }
+.chapterLine { width: 2.4rem; height: 1px; flex-shrink: 0; background: currentColor; opacity: .4; }
+.chapterHeader { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-bottom: 3.5rem; }
+.place { color: #626d5e; font-size: .6rem; }
+.display, .restaurantCopy h3, .coolBarCopy h3, .spaCopy h3, .stayPanel h3, .benefitsHeading h2, .contactDetails h3, .munnarHeading h2, .invitation h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -.05em;
+  text-wrap: balance;
+}
+.display { font-size: clamp(2.9rem, 5.4vw, 5.4rem); }
+.display em, .restaurantCopy em, .coolBarCopy em, .spaCopy em, .benefitsHeading em { font-weight: 400; color: #677656; }
+.aboutCopy > p, .stayPanel p, .restaurantCopy p, .coolBarCopy p, .spaCopy p, .contactIntro, .contactNote p {
+  max-width: 34rem;
+  margin: 1.5rem 0 0;
+  font-size: .9rem;
+  line-height: 1.9;
+}
+.photo { position: relative; min-width: 0; background: #bcc0ac; isolation: isolate; }
+.photo img { object-fit: cover; }
+.photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: #092316; opacity: .035; transition: opacity 700ms ease; }
+@media (hover: hover) { .photo:hover::after { opacity: 0; } }
+.photo:has(img) { clip-path: inset(0); }
+.photo img { transition: transform 1100ms cubic-bezier(.2,.65,.3,1); }
+@media (hover: hover) { .photo:hover img { transform: scale(1.025); } }
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 3rem;
+  padding-block: .65rem;
+  border-bottom: 1px solid currentColor;
+  color: inherit;
+  font-size: .67rem;
+  line-height: 1.6;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.textLink svg, .solidButton svg, .lightButton svg { flex-shrink: 0; transition: transform 350ms ease; }
+.textLink:hover svg, .solidButton:hover svg, .lightButton:hover svg { transform: translateX(4px); }
+.textLink:focus-visible, .solidButton:focus-visible, .lightButton:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+.botanical { width: 5rem; height: auto; flex-shrink: 0; color: #758265; }
+
+/* The opening spread: a tall landscape and generous editorial typography. */
+.aboutGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 6.5vw, 7rem); align-items: center; }
+.aboutFigure { margin: 0; }
+.aboutPhoto { aspect-ratio: 4 / 5; }
+.aboutFigure figcaption, .poolFigure figcaption, .tableFigure figcaption { display: flex; justify-content: space-between; gap: 1rem; margin-top: .9rem; font-family: var(--font-mono); font-size: .57rem; line-height: 1.8; letter-spacing: .04em; color: #5d6b59; }
+.aboutCopy { position: relative; padding-block: .6rem; }
+.aboutCopy .display { font-size: clamp(2.85rem, 4.8vw, 4.9rem); }
+.aboutCopy .lead { font-family: var(--font-display); font-size: clamp(1.25rem, 1.8vw, 1.55rem); line-height: 1.5; letter-spacing: -.025em; margin-top: 2rem; }
+.natureNote { display: flex; align-items: center; gap: 1.1rem; margin: 1.7rem 0 1rem; }
+.natureNote .botanical { width: 2.7rem; height: 4.2rem; }
+.natureNote p { font-family: var(--font-display); font-size: 1.1rem; line-height: 1.55; }
+.natureNote span { font-family: var(--font-body); font-size: .67rem; color: #5a6757; }
+.aboutFoot { display: flex; justify-content: space-between; gap: 1.5rem; margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid #c7ccbb; color: #59694f; font-size: .6rem; }
+.tableFigure figcaption { color: #52604e; }
+
+/* A cottage photograph with a paper-like information panel set into it. */
+.stayHeader { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr); align-items: start; gap: 2rem; margin-bottom: 3.5rem; }
+.stayHeader > .eyebrow { padding-top: .7rem; color: #c3cbb4; }
+.stayHeader .display { max-width: 48rem; font-size: clamp(2.9rem, 4.8vw, 4.8rem); }
+.stayHeader .display em { color: #bdc4a5; }
+.stayComposition { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); position: relative; align-items: center; }
+.cottagePhoto { grid-column: 1 / 10; grid-row: 1; aspect-ratio: 1.35; }
+.stayPanel { position: relative; grid-column: 8 / 13; grid-row: 1; padding: clamp(1.6rem, 3.6vw, 3.7rem); background: #e9e7d8; color: #183226; box-shadow: 0 12px 35px #00000012; }
+.stayPanel .eyebrow { font-size: .57rem; }
+.stayPanel h3 { font-size: clamp(1.8rem, 3.3vw, 3.3rem); margin-top: 1.8rem; line-height: 1.15; }
+.stayPanel h3 em { color: #697451; }
+.stayPanel p { font-size: .83rem; line-height: 1.8; margin: 1.3rem 0 1.7rem; }
+.staySideNote { position: absolute; bottom: 1rem; right: 0; color: #c3cbb4; font-size: .55rem; }
+.cottageDetails { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.7fr) minmax(0, 1fr); align-items: center; gap: clamp(1.5rem, 4vw, 4rem); padding-top: 4rem; scroll-margin-top: 8rem; }
+.balconyPhoto { aspect-ratio: .9; align-self: start; }
+.comfortList { display: grid; gap: 1.1rem; }
+.comfort { display: flex; gap: 1.2rem; padding-bottom: 1.1rem; border-bottom: 1px solid #a9b29138; }
+.comfort > span { padding-top: .2rem; color: #b3bd99; font-family: var(--font-mono); font-size: .6rem; }
+.comfort h3 { font-size: .85rem; font-weight: 500; margin: 0; }
+.comfort p { margin: .4rem 0 0; font-size: .73rem; line-height: 1.8; color: #bdc7b4; }
+.comfortList .textLink { font-size: .58rem; color: #d5d9c3; }
+.stayQuote { margin: 0; font-family: var(--font-display); font-size: clamp(2.5rem, 4.5vw, 4rem); line-height: 1.15; letter-spacing: -.05em; color: #c1c8ac; }
+
+/* Dining uses two offset spreads, each with its own pace. */
+.diningHeading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin: 2rem 0 3.8rem; }
+.diningHeading > p { font-size: .78rem; line-height: 1.85; padding-right: 1rem; }
+.restaurantGrid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.diningPhoto { aspect-ratio: 1.16; }
+.restaurantCopy h3, .coolBarCopy h3, .spaCopy h3 { font-size: clamp(2.6rem, 4vw, 4rem); margin-top: 1.8rem; }
+.restaurantCopy .eyebrow, .coolBarCopy .eyebrow { font-size: .57rem; }
+.restaurantCopy p { max-width: 22rem; }
+.smallRule { display: block; width: 4rem; height: 1px; background: #899074; margin-top: 2.4rem; }
+.coolBarRow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 2rem; gap: clamp(2rem, 6vw, 6rem); align-items: center; padding-top: 4rem; padding-left: 12%; }
+.coolBarCopy p { max-width: 22rem; }
+.coolBarCopy h3 { font-size: clamp(2.3rem, 3.4vw, 3.3rem); }
+.tableFigure { margin: 0; }
+.tablePhoto { aspect-ratio: 1.05; }
+.verticalNote { writing-mode: vertical-rl; justify-self: center; color: #68745b; font-size: .56rem; }
+
+/* Landscape chapters keep text on a measured, accessible scrim. */
+.munnar, .invitation { position: relative; isolation: isolate; color: #f9f4e7; background: #143625; }
+.landscape { object-fit: cover; z-index: -3; }
+.munnar > .landscape { object-position: center 55%; }
+.cinematicShade { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, #071d10b8, #071d102e), linear-gradient(0deg, #071d10d9, transparent 60%); }
+.munnarContent { min-height: clamp(42rem, 59vw, 58rem); display: flex; flex-direction: column; justify-content: space-between; padding-block: clamp(3rem, 5vw, 5rem); gap: 4rem; }
+.munnarHeading h2 { font-size: clamp(3.6rem, 7.5vw, 7.5rem); margin-top: 1.2rem; }
+.munnarHeading p { font-size: .88rem; line-height: 1.9; margin: 1.6rem 0 0; }
+.munnarHeading .eyebrow { font-size: .6rem; }
+.places { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
+.places a { color: inherit; text-decoration: none; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 1.1rem; min-height: 4.5rem; padding-block: 1rem; border-top: 1px solid #f5f1e073; font-size: .8rem; line-height: 1.5; transition: border-color 250ms ease; }
+.places a:hover { border-color: #f5f1e0; }
+.places svg { width: 18px; }
+.locationIndex { font-size: .6rem; color: #d7ddc3; }
+
+/* Pool and spa form a quiet, staggered gallery. */
+.wellnessGrid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 2.5rem; row-gap: 3rem; margin-top: 3rem; align-items: center; }
+.wellnessHeading { grid-column: 1 / 6; grid-row: 1; align-self: start; padding-top: 1rem; }
+.wellnessHeading .display { font-size: clamp(2.8rem, 4.7vw, 4.8rem); }
+.wellnessHeading > .botanical { display: block; margin: 2rem 0 1rem; width: 3.4rem; height: 5.4rem; }
+.wellnessHeading p { font-size: .82rem; line-height: 1.8; color: #596850; }
+.poolFigure { grid-column: 6 / 13; grid-row: 1; margin: 0; }
+.poolPhoto { aspect-ratio: 1.08; }
+.poolFigure figcaption { flex-wrap: wrap; }
+.spaFigure { grid-column: 2 / 6; grid-row: 2; margin: -2rem 0 0; }
+.spaPhoto { aspect-ratio: .9; }
+.spaCopy { grid-column: 7 / 12; grid-row: 2; }
+.spaCopy h3 { font-size: clamp(2.1rem, 3.3vw, 3.4rem); }
+.spaCopy p { max-width: 25rem; font-size: .84rem; }
+.spaCopy .eyebrow { font-size: .6rem; }
+
+/* Everyday benefits are type and fine rules, without card containers. */
+.benefits { padding-block: clamp(4rem, 6vw, 6rem); }
+.benefitsHeading { display: flex; justify-content: space-between; gap: 2rem; align-items: center; }
+.benefitsHeading h2 { font-size: clamp(2rem, 3.2vw, 3rem); }
+.benefitsHeading .eyebrow { font-size: .58rem; }
+.benefitList { list-style: none; padding: 0; margin: 3rem 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.benefitList li { border-top: 1px solid #a6ae98; padding: 1.5rem 2rem 0 0; }
+.benefitList li + li { padding-left: 2rem; border-left: 1px solid #c9cfbc; }
+.benefitNumber { font-family: var(--font-mono); color: #5e7154; font-size: .68rem; }
+.benefitList h3 { font-family: var(--font-display); font-size: clamp(1.3rem, 2vw, 1.7rem); font-weight: 400; margin: 1.6rem 0 .7rem; letter-spacing: -.035em; }
+.benefitList p { margin: 0; font-size: .76rem; line-height: 1.8; color: #56634f; }
+
+/* A practical invitation to get in touch, with no pretend booking form. */
+.contactGrid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(2rem, 7vw, 8rem); margin-top: 3rem; align-items: center; }
+.contactGrid .display { font-size: clamp(2.7rem, 4.3vw, 4.4rem); }
+.contactIntro { max-width: 30rem; margin-bottom: 2rem; }
+.solidButton, .lightButton { display: inline-flex; align-items: center; justify-content: space-between; gap: 1.7rem; max-width: 100%; min-height: 3.5rem; padding: 1rem 1.5rem; background: #173b29; border: 1px solid #173b29; color: #f5f1e0; text-decoration: none; font-size: .63rem; letter-spacing: .09em; line-height: 1.7; text-transform: uppercase; transition: background 250ms ease; }
+.solidButton:hover { background: #2a4b35; }
+.contactDetails { position: relative; border-left: 1px solid #b9c1aa; padding-left: clamp(2rem, 4.5vw, 4.5rem); }
+.contactDetails > .botanical { width: 2.6rem; height: 4rem; margin-bottom: 1.5rem; }
+.contactDetails h3 { font-size: 1.75rem; }
+.contactDetails address { max-width: 22rem; margin-top: 1.2rem; font-size: .84rem; line-height: 1.9; font-style: normal; }
+.contactDetails .textLink { margin-top: .7rem; font-size: .6rem; }
+.contactNote { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #b9c1aa; }
+.contactNote .eyebrow { font-size: .55rem; }
+.contactNote p { margin-top: .7rem; font-size: .75rem; }
+.invitationShade { position: absolute; inset: 0; z-index: -2; background: #071d1099; }
+.invitationContent { width: min(100%, 70rem); margin: auto; text-align: center; display: flex; flex-direction: column; align-items: center; padding: clamp(5rem, 9vw, 10rem) 1.25rem clamp(4rem, 6vw, 6rem); }
+.invitation .eyebrow { font-size: .6rem; justify-content: center; }
+.invitation h2 { font-size: clamp(2.7rem, 6.4vw, 6.3rem); margin-top: 2rem; }
+.invitation p { font-size: .84rem; line-height: 1.9; margin: 1.8rem 0 2.5rem; }
+.lightButton { background: #f0eddf; color: #173b29; border-color: #f0eddf; min-width: 14rem; }
+.lightButton:hover { background: white; }
+.invitationFoot { margin-top: 4rem; font-size: .54rem; letter-spacing: .19em; }
+
+/* Map section within Contact */
+.mapSection { margin-top: clamp(3rem, 5vw, 5rem); border-top: 1px solid #b9c1aa; padding-top: clamp(2rem, 4vw, 4rem); }
+.mapHeader { margin-bottom: 2rem; }
+.mapTitle { font-family: var(--font-display); font-size: clamp(1.6rem, 2.5vw, 2.4rem); font-weight: 400; letter-spacing: -.035em; margin: .8rem 0 0; }
+.mapSubtitle { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: #5d6b59; margin: .6rem 0 0; }
+.mapContainer { position: relative; width: 100%; aspect-ratio: 21 / 9; border: 1px solid rgba(7, 29, 16, .15); background: #dddad0; overflow: hidden; }
+.mapIframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: saturate(.85) contrast(1.05); }
+.mapActions { display: flex; align-items: center; justify-content: space-between; margin-top: 1.2rem; }
+.mapCta { display: inline-flex; align-items: center; gap: .8rem; color: #1c3428; font-family: var(--font-mono); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; padding: .8rem 0; border-bottom: 1px solid #1c3428; transition: color 250ms ease, border-color 250ms ease; }
+.mapCta:hover { color: #677656; border-color: #677656; }
+.mapCta svg { flex-shrink: 0; }
+
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .aboutFigure, .restaurantGrid, .poolFigure, .spaFigure {
+      animation: settle-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 22%;
+    }
+  }
+}
+@keyframes settle-in { from { opacity: .6; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (min-width: 1920px) {
+  .munnarContent { min-height: 56rem; }
+  .invitationContent { padding-block: 9rem 6rem; }
+}
+@media (max-width: 1100px) {
+  .aboutGrid { gap: 3rem; }
+  .aboutCopy .display { font-size: clamp(2.6rem, 4.8vw, 4rem); }
+  .aboutPhoto { aspect-ratio: .7; }
+  .stayPanel { grid-column: 7 / 13; }
+  .staySideNote { display: none; }
+  .cottageDetails { grid-template-columns: minmax(0, .8fr) minmax(0, 1.7fr); }
+  .stayQuote { display: none; }
+  .diningHeading > p { max-width: 14rem; }
+  .coolBarRow { padding-left: 5%; gap: 2.5rem; }
+  .wellnessGrid { column-gap: 1.5rem; }
+  .places { gap: 1.3rem; }
+  .places a { gap: .7rem; }
+  .benefitsHeading { align-items: start; flex-direction: column; gap: 1.5rem; }
+}
+@media (max-width: 760px) {
+  .wrap { padding-inline: clamp(1.25rem, 6vw, 2.75rem); }
+  .chapterHeader { margin-bottom: 2.2rem; }
+  .chapterHeader .place { display: none; }
+  .display { font-size: clamp(2.55rem, 9.6vw, 4rem); }
+  .aboutGrid { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .aboutFigure { order: 2; }
+  .aboutPhoto { aspect-ratio: 1.1; }
+  .aboutCopy .display { max-width: 34rem; font-size: clamp(2.7rem, 10.3vw, 4.2rem); }
+  .aboutCopy .lead { margin-top: 1.5rem; }
+  .aboutCopy > p { font-size: .85rem; }
+  .natureNote { margin-top: 1rem; }
+  .aboutFoot { margin-top: 2rem; gap: .8rem; font-size: .51rem; }
+  .aboutFoot span { flex: 1; }
+  .aboutFoot span:last-child { text-align: right; }
+  .stayHeader { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; margin-bottom: 2rem; }
+  .stayHeader .display { font-size: clamp(2.6rem, 9.5vw, 4rem); }
+  .stayComposition { grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: start; }
+  .cottagePhoto { grid-column: 1 / 13; grid-row: 1; aspect-ratio: 1.2; }
+  .stayPanel { grid-column: 2 / 13; grid-row: 2; margin-top: -2.5rem; padding: clamp(1.5rem, 6vw, 2.5rem); }
+  .stayPanel h3 { font-size: clamp(2rem, 7.8vw, 3rem); margin-top: 1rem; }
+  .stayPanel h3 br { display: none; }
+  .stayPanel p { margin-block: 1rem; }
+  .cottageDetails { padding-top: 2.5rem; gap: 1.5rem; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: start; }
+  .balconyPhoto { aspect-ratio: .67; }
+  .comfort { gap: .5rem; }
+  .comfort h3 { font-size: .85rem; }
+  .comfort p { font-size: .8rem; line-height: 1.7; }
+  .comfortList .textLink { gap: .5rem; font-size: .7rem; }
+  .diningHeading { display: block; margin: 1.6rem 0 2rem; }
+  .diningHeading > p { max-width: 25rem; margin-top: 1.5rem; }
+  .diningHeading > p br { display: none; }
+  .restaurantGrid { grid-template-columns: minmax(0, 1fr); gap: 1.8rem; }
+  .diningPhoto { aspect-ratio: 1.15; }
+  .restaurantCopy { max-width: 30rem; padding-left: 8%; }
+  .restaurantCopy h3 { font-size: 2.7rem; margin-top: 1rem; }
+  .restaurantCopy h3 br { display: none; }
+  .restaurantCopy p { max-width: none; font-size: .85rem; }
+  .smallRule { margin-top: 1.7rem; }
+  .coolBarRow { grid-template-columns: minmax(0, 1fr); gap: 1.8rem; padding: 3rem 0 0; margin-top: 2.5rem; border-top: 1px solid #bdc0ac; }
+  .coolBarCopy h3 { font-size: 2.5rem; margin-top: 1rem; }
+  .coolBarCopy p { font-size: .85rem; max-width: 30rem; }
+  .tableFigure { width: 80%; justify-self: end; }
+  .tablePhoto { aspect-ratio: 1.1; }
+  .verticalNote { display: none; }
+  .munnarContent { min-height: 44rem; padding-block: 3rem 2rem; gap: 3.5rem; }
+  .munnarHeading h2 { font-size: clamp(3.1rem, 12vw, 5.2rem); }
+  .munnarHeading p { font-size: .8rem; }
+  .places { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .places a { min-height: 3.8rem; gap: 1rem; font-size: .77rem; }
+  .wellnessGrid { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 0; row-gap: 2rem; margin-top: 1.8rem; }
+  .wellnessHeading { grid-column: 1 / 13; grid-row: 1; padding-top: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; }
+  .wellnessHeading .display { font-size: clamp(2.7rem, 10vw, 4.3rem); }
+  .wellnessHeading > .botanical { margin: .7rem 0 0 .8rem; width: 2.6rem; height: 5rem; }
+  .wellnessHeading p { grid-column: 1 / -1; margin: 1.5rem 0 0; }
+  .poolFigure { grid-column: 1 / 13; grid-row: 2; }
+  .poolPhoto { aspect-ratio: 1.25; }
+  .spaFigure { grid-column: 1 / 10; grid-row: 3; margin: 1.5rem 0 0; }
+  .spaPhoto { aspect-ratio: 1; }
+  .spaCopy { grid-column: 2 / 13; grid-row: 4; }
+  .spaCopy h3 { font-size: 2.5rem; margin-top: 1rem; }
+  .spaCopy p { max-width: 30rem; }
+  .benefitsHeading { gap: 1.2rem; }
+  .benefitList { grid-template-columns: minmax(0, 1fr); margin-top: 2rem; }
+  .benefitList li, .benefitList li + li { display: block; padding: 1.5rem 0; border-left: 0; }
+  .benefitList h3 { margin: 0; font-size: 1.35rem; }
+  .benefitList p { font-size: .73rem; }
+  .benefitList li:last-child { padding-bottom: 0; }
+  .contactGrid { grid-template-columns: minmax(0, 1fr); margin-top: 2rem; gap: 3rem; }
+  .contactGrid .display { font-size: clamp(2.5rem, 9.4vw, 4rem); }
+  .contactDetails { border-left: 0; border-top: 1px solid #b9c1aa; padding: 2rem 0 0; display: grid; grid-template-columns: minmax(0, 1fr) 3rem; gap: 0 1rem; }
+  .contactDetails > .botanical { grid-column: 2; grid-row: 1; }
+  .contactDetails > div { grid-column: 1; grid-row: 1; }
+  .contactDetails > .contactNote { grid-column: 1 / 3; grid-row: 2; }
+  .contactDetails address { font-size: .8rem; }
+  .contactIntro { font-size: .85rem; }
+  .solidButton { padding-inline: 1.1rem; font-size: .7rem; gap: 1rem; }
+  .invitation h2 { font-size: clamp(2.5rem, 9.5vw, 4.4rem); }
+  .invitation p { font-size: .78rem; }
+  .invitation .eyebrow { font-size: .53rem; }
+  .invitation > .landscape { object-position: 65% center; }
+  .mapContainer { aspect-ratio: 4 / 3; }
+  .mapTitle { font-size: 1.5rem; }
+  .mapCta { font-size: .58rem; gap: .6rem; flex-wrap: wrap; }
+}
+@media (max-width: 380px) {
+  .eyebrow { font-size: .58rem; gap: .6rem; }
+  .chapterLine { width: 1.5rem; }
+  .aboutCopy .display { font-size: 2.65rem; }
+  .aboutFoot { flex-direction: column; gap: .5rem; }
+  .aboutFoot span:last-child { text-align: left; }
+  .stayPanel { grid-column: 1 / 13; margin: 0; }
+  .cottageDetails { grid-template-columns: minmax(0, 1fr); }
+  .balconyPhoto { width: 65%; aspect-ratio: 1; }
+  .comfort h3 { font-size: .9rem; }
+  .comfort p { font-size: .8rem; }
+  .comfort { gap: 1rem; }
+  .tableFigure { width: 90%; }
+  .contactDetails { grid-template-columns: minmax(0, 1fr); }
+  .contactDetails > .botanical { display: none; }
+  .contactDetails > .contactNote { grid-column: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo img, .photo::after, .textLink svg, .solidButton svg, .lightButton svg { transition: none; }
+  .photo:hover img, .textLink:hover svg, .solidButton:hover svg, .lightButton:hover svg { transform: none; }
+}

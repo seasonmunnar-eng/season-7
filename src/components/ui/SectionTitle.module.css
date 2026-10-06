@@ -1,0 +1,57 @@
+.container {
+  margin-bottom: 3rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.eyebrowCenter {
+  justify-content: center;
+}
+
+.eyebrowDark {
+  color: var(--color-brass-light);
+}
+
+.eyebrowLight {
+  color: var(--color-brass);
+}
+
+.line {
+  height: 1px;
+  width: 2rem;
+  background-color: currentColor;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.titleDark {
+  color: var(--color-parchment);
+}
+
+.titleLight {
+  color: var(--color-ink);
+}

@@ -1,0 +1,38 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, rgba(2, 12, 5, 0.22), rgba(2, 12, 5, 0.58)), url('/images/season7-navbar-foliage.webp') center 48% / cover, var(--color-forest);
+  transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1), visibility 1200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fadeOut {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.logoContainer {
+  position: relative;
+  z-index: 3;
+  animation: pulse 2s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo {
+  object-fit: contain;
+  mix-blend-mode: screen;
+  filter: brightness(1.1);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.98);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1.02);
+    opacity: 1;
+  }
+}

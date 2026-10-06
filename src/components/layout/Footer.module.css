@@ -1,0 +1,129 @@
+.footer {
+  padding: 3.5rem 0 2rem;
+  background: linear-gradient(90deg, rgba(2, 12, 5, 0.22), rgba(2, 12, 5, 0.58)), url('/images/season7-navbar-foliage.webp') center 48% / cover, var(--color-forest);
+  color: var(--color-cream);
+}
+
+.topRow,
+.bottomRow {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.topRow {
+  align-items: flex-start;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(245, 241, 224, 0.2);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  width: 11.5rem;
+  height: 5.2rem;
+  overflow: hidden;
+  gap: 0.75rem;
+  color: var(--color-cream);
+  text-decoration: none;
+}
+
+.brandLogo {
+  width: 11.5rem;
+  height: 5.2rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footerNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+}
+
+.footerNav a {
+  color: rgba(245, 241, 224, 0.7);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.footerNav a:hover {
+  color: var(--color-gold);
+}
+
+.bottomRow {
+  position: relative;
+  gap: 0.65rem;
+  padding-top: 1.5rem;
+  color: rgba(245, 241, 224, 0.45);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+}
+
+.bottomRow p {
+  margin: 0;
+}
+
+.copyInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.socialLinks a {
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  color: rgba(245, 241, 224, 0.9);
+  transition: color 220ms ease;
+}
+
+.socialLinks svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.socialLinks a:hover {
+  color: var(--color-gold);
+}
+
+@media (min-width: 760px) {
+  .topRow {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .bottomRow {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  
+  .socialLinks {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    align-self: auto;
+    width: auto;
+    margin-top: 0;
+    transform: translate(-50%, -50%);
+  }
+}

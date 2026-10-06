@@ -1,0 +1,49 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-forest);
+  transition: opacity 0.5s ease;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  color: var(--color-cream);
+  letter-spacing: -0.025em;
+}
+
+.llc {
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--color-gold);
+}
+
+.barContainer {
+  margin-top: 2rem;
+  height: 1px;
+  width: 10rem;
+  background-color: color-mix(in srgb, var(--color-cream) 20%, transparent);
+  overflow: hidden;
+}
+
+.barInner {
+  height: 100%;
+  background-color: var(--color-gold);
+  animation: loader-bar 1.2s ease-out forwards;
+}
