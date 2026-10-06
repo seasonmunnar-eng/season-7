@@ -46,7 +46,7 @@ function isReferenced(fileToCheck) {
     return false;
 }
 
-const specialFiles = ['page.tsx', 'layout.tsx', 'globals.css', 'icon.png', 'robots.ts', 'sitemap.ts', 'next-env.d.ts'];
+const specialFiles = ['page.tsx', 'layout.tsx', 'globals.css', 'robots.ts', 'sitemap.ts', 'next-env.d.ts'];
 
 const unusedFiles = [];
 for (const f of allFiles) {

@@ -40,7 +40,7 @@ export default function Navbar() {
         <div className={styles.inner}>
           <Link href="/" onClick={() => setOpen(false)} className={styles.logo} aria-label="Season7 Natural Resort Munnar home">
             <Image
-              src="/images/season7-forest-logo-transparent-v3.png"
+              src="/images/season7-forest-logo-transparent-v3.webp"
               alt="Season7 The Nature Resort logo"
               className={styles.logoImg}
               width={220}

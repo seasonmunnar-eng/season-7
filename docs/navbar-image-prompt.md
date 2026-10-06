@@ -2,7 +2,7 @@
 
 Generated with the built-in image-generation tool using `public/images/season7-forest-logo.webp` as a palette and texture reference. The original logo is unchanged.
 
-Final asset: `public/images/season7-navbar-foliage.webp` (WebP conversion of the generated PNG).
+Final asset: `public/images/season7-navbar-foliage.webp`.
 
 ## Prompt
 

@@ -10,7 +10,7 @@ const pageTitle = `${resortName} | Munnar, Kerala`;
 const pageDescription =
   "Find your quiet escape at Season7 The Nature Resort in Chithirapuram, Munnar. Discover cottages with private balconies, dining, a swimming pool and spa.";
 const socialImage = {
-  url: "/images/season7-munnar-hero.png",
+  url: "/images/season7-munnar-hero.webp",
   width: 1672,
   height: 941,
   alt: "A nature retreat overlooking misty green hills in Munnar",
@@ -33,6 +33,9 @@ export const metadata: Metadata = {
   authors: [{ name: resortName }],
   creator: resortName,
   publisher: resortName,
+  icons: {
+    icon: "/icon.webp",
+  },
   formatDetection: {
     email: false,
     address: false,

@@ -54,10 +54,10 @@ export default function ResortExperience() {
               <Reveal delay={180} className={styles.heroGallery}>
                 <div className={styles.galleryPanels} aria-label="Explore the resort">
                   {[
-                    { image: "season7-munnar-hero.png", label: "The retreat", href: "#about" },
-                    { image: "season7-luxury-room.png", label: "Stay", href: "#services" },
-                    { image: "season7-dining.png", label: "Dine", href: "#services" },
-                    { image: "season7-nature-walk.png", label: "Discover", href: "#experiences" },
+                    { image: "season7-munnar-hero.webp", label: "The retreat", href: "#about" },
+                    { image: "season7-luxury-room.webp", label: "Stay", href: "#services" },
+                    { image: "season7-dining.webp", label: "Dine", href: "#services" },
+                    { image: "season7-nature-walk.webp", label: "Discover", href: "#experiences" },
                   ].map((panel, index) => (
                     <a key={panel.label} href={panel.href} className={styles.galleryPanel}>
                       <Image src={`/images/${panel.image}`} alt="" fill priority={index < 2}

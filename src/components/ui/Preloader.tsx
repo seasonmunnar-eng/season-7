@@ -31,7 +31,7 @@ export default function Preloader() {
     <div className={`${styles.preloader} ${fading ? styles.fadeOut : ""}`}>
       <div className={styles.logoContainer}>
         <Image
-          src="/images/season7-forest-logo-transparent-v3.png"
+          src="/images/season7-forest-logo-transparent-v3.webp"
           alt="Season7 Logo"
           width={160}
           height={160}

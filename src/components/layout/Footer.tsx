@@ -11,7 +11,7 @@ export default function Footer() {
         <div className={styles.topRow}>
           <Link href="/" className={styles.brand}>
             <Image
-              src="/images/season7-forest-logo-transparent-v3.png"
+              src="/images/season7-forest-logo-transparent-v3.webp"
               alt="Season7 Natural Resort Munnar"
               className={styles.brandLogo}
               width={240}

@@ -1,6 +1,6 @@
 # Preloader logo background extraction
 
-The preloader continues to use `/images/season7-forest-logo-transparent-v3.png`.
+The preloader continues to use `/images/season7-forest-logo-transparent-v3.webp`.
 No logo asset or preloader source was changed by this extraction task because the
 generated candidates did not satisfy the requirement to preserve the approved
 logo exactly.
@@ -8,7 +8,7 @@ logo exactly.
 ## Existing source inspection
 
 - Official artwork: `public/images/season7-forest-logo.webp`, 2200 × 1727.
-- Existing preloader artwork: `public/images/season7-forest-logo-transparent-v3.png`,
+- Existing preloader artwork: `public/images/season7-forest-logo-transparent-v3.webp`,
   2200 × 1727, RGBA.
 - The existing preloader asset contains 3,601,146 fully transparent pixels
   (94.782%), 198,254 opaque pixels, and no partially transparent pixels.
